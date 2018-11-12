@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "677703505428",
+    "firebase_url": "https://motor-codification.firebaseio.com",
+    "project_id": "motor-codification",
+    "storage_bucket": "motor-codification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677703505428:android:a4783e523715ec80",
+        "android_client_info": {
+          "package_name": "io.github.yashxd.motorcodification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677703505428-990b43va2qthcc94ip3a0ed1dhl13r2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDevlEbCm-arX_L6N9lYDGIjvlDFn5yzpE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

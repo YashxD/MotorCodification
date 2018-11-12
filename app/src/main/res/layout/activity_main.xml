@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/motor_rating"
+            android:textSize="20sp"
+            android:layout_weight="5"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner_rating"
+            android:layout_weight="5"
+            android:entries="@array/raing_array"
+            android:prompt="@string/rating_prompt"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/motor_rpm"
+            android:textSize="20sp"
+            android:layout_weight="5"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner_rpm"
+            android:layout_weight="5"
+            android:entries="@array/rpm_array"
+            android:prompt="@string/rpm_prompt"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/motor_mounting"
+            android:textSize="20sp"
+            android:layout_weight="5"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner_mounting"
+            android:layout_weight="5"
+            android:entries="@array/mounting_array"
+            android:prompt="@string/mounting_prompt"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/motor_frame"
+            android:textSize="20sp"
+            android:layout_weight="5"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner_frame"
+            android:layout_weight="5"
+            android:entries="@array/frame_array"
+            android:prompt="@string/frame_prompt"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_submit"
+        android:text="@string/submit"
+        android:layout_gravity="center"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_serial"
+        android:text="@string/serial_default"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:paddingVertical="25dp"/>
+
+
+</LinearLayout>

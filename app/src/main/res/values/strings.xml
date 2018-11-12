@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Motor Codification</string>
+
+    <string name="motor_rating">Motor rating</string>
+    <string name="rating_prompt">Choose a rating</string>
+    <string name="motor_rpm">Motor RPM</string>
+    <string name="rpm_prompt">Choose an RPM</string>
+    <string name="motor_mounting">Motor mounting</string>
+    <string name="mounting_prompt">Choose a mounting</string>
+    <string name="motor_frame">Motor frame</string>
+    <string name="frame_prompt">Choose a frame</string>
+
+    <string name="submit">Submit</string>
+    <string name="serial_default">Enter necessary details and press Submit button to generate Serial!</string>
+
+    <string-array name="raing_array">
+        <item>010</item>
+        <item>015</item>
+        <item>020</item>
+        <item>025</item>
+        <item>030</item>
+        <item>040</item>
+        <item>050</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+    </string-array>
+    <string-array name="rpm_array">
+        <item>A - 700</item>
+        <item>B - 900</item>
+        <item>C - 1400</item>
+        <item>D - 2800</item>
+    </string-array>
+    <string-array name="mounting_array">
+        <item>FT - Foot Mounted</item>
+        <item>FF - Foot cum Flange Mounted</item>
+        <item>FL - Flange Mounted</item>
+    </string-array>
+    <string-array name="frame_array">
+        <item>90L</item>
+        <item>100L</item>
+        <item>112M</item>
+        <item>132S</item>
+        <item>132M</item>
+        <item>160M</item>
+        <item>160L</item>
+        <item>180M</item>
+        <item>180L</item>
+    </string-array>
+
+</resources>
