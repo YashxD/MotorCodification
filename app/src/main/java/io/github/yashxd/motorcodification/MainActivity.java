@@ -1,5 +1,6 @@
 package io.github.yashxd.motorcodification;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.nfc.Tag;
@@ -32,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     Resources res;
     String[] rpmArray, mountingArray;
     int ratingIndex;
-    long[] serialInt = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    long[] serialInt = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}; //Array to store the value of times machine has been run with the specific rating
     String[] ratingChar = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"};
+
+    ProgressDialog dialog;
 
     DatabaseReference mDatabase;
 
@@ -44,14 +47,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(int i = 0; i<15; i++) {
-                    serialInt[i] = (long) dataSnapshot.child(""+i).child("serialValue").getValue();
-                    Log.e("LOL", "serialInt["+i+"] = "+serialInt[i]);
+                    if(dataSnapshot.child(""+i).child("serialValue").exists()){
+                        serialInt[i] = (long) dataSnapshot.child(""+i).child("serialValue").getValue();
+                        Log.v("DataRetrieval", "data updated at "+i);
+                        //Toast.makeText(MainActivity.this, "Data Retrieved at position "+i+" as "+serialInt[i], Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Log.e("DataRetrieval","Error retrieving data at "+i);
+                    }
+                }
+                if(dialog.isShowing()){
+                    dialog.hide();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "Error while retreiving from database", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Error while retrieving from database", Toast.LENGTH_LONG).show();
+                Log.v("DataRetrieval", "data retrieval issue");
             }
         };
         mDatabase.addValueEventListener(serialListener);
@@ -61,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        dialog = new ProgressDialog(MainActivity.this);
+        dialog.setMessage("Retrieving data from database.\nPlease wait!");
+        dialog.setCancelable(false);
+        dialog.setInverseBackgroundForced(false);
+        dialog.show();
 
         rating = findViewById(R.id.spinner_rating);
         rpm = findViewById(R.id.spinner_rpm);
@@ -99,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
                     mountingValue = "FF";
                 if(mountingValue.equals(mountingArray[2]))
                     mountingValue = "FL";
+                if(mountingValue.equals(mountingArray[3]))
+                    mountingValue = "FC";
 
                 serialValue = ratingValue + rpmValue + mountingValue + frameValue + ratingChar[ratingIndex] + String.format("%03d", serialInt[ratingIndex]);
                 serial.setText(serialValue);
@@ -106,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 serialInt[ratingIndex]++;
                 //Set new Serial number
                 mDatabase.child(""+ratingIndex).child("serialValue").setValue(serialInt[ratingIndex]);
+                //Toast.makeText(MainActivity.this, "Value updated successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }

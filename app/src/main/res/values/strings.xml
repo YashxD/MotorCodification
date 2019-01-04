@@ -21,32 +21,46 @@
         <item>030</item>
         <item>040</item>
         <item>050</item>
-        <item>100</item>
+        <item>060</item>
         <item>150</item>
         <item>200</item>
         <item>250</item>
+        <item>12.5</item>
+        <item>125</item>
+
     </string-array>
     <string-array name="rpm_array">
         <item>A - 700</item>
         <item>B - 900</item>
         <item>C - 1400</item>
-        <item>D - 2800</item>
+        <item>D - 2900</item>
     </string-array>
     <string-array name="mounting_array">
         <item>FT - Foot Mounted</item>
         <item>FF - Foot cum Flange Mounted</item>
         <item>FL - Flange Mounted</item>
+        <item>FC - Face Mounted</item>
     </string-array>
     <string-array name="frame_array">
-        <item>90L</item>
-        <item>100L</item>
-        <item>112M</item>
         <item>132S</item>
         <item>132M</item>
         <item>160M</item>
         <item>160L</item>
         <item>180M</item>
         <item>180L</item>
+        <item>200L</item>
+        <item>225S</item>
+        <item>225M</item>
+        <item>225L</item>
+        <item>250S</item>
+        <item>250M</item>
+        <item>250L</item>
+        <item>280S</item>
+        <item>280M</item>
+        <item>280L</item>
+        <item>315S</item>
+        <item>315M</item>
+        <item>315L</item>
     </string-array>
 
 </resources>
